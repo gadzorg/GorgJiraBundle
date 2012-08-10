@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="gorg_jira.client.class">Gorg\Bundle\JiraBundle\Services\JiraClient</parameter>
+        <parameter key="gorg_jira.client.user">%jira_user%</parameter>
+        <parameter key="gorg_jira.client.password">%jira_password%</parameter>
+        <parameter key="gorg_jira.client.server">%jira_server%</parameter>
+        <parameter key="gorg_jira.client.port">%jira_port%</parameter>
+        <parameter key="gorg_jira.client.wsdl">%jira_wsdl%</parameter>
+
+    </parameters>
+
+    <services>
+        <service id="gorg_jira.client" class="%gorg_jira.client.class%">
+            <argument>%gorg_jira.client.server%</argument>
+            <argument>%gorg_jira.client.port%</argument>
+            <argument>%gorg_jira.client.wsdl%</argument>
+            <argument>%gorg_jira.client.user%</argument>
+            <argument>%gorg_jira.client.password%</argument>
+        </service>
+    </services>
+</container>
