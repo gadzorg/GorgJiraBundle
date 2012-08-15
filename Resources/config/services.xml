@@ -16,6 +16,7 @@
 
     <services>
         <service id="gorg_jira.client" class="%gorg_jira.client.class%">
+            <argument type="service" id="logger" />
             <argument>%gorg_jira.client.server%</argument>
             <argument>%gorg_jira.client.port%</argument>
             <argument>%gorg_jira.client.wsdl%</argument>
