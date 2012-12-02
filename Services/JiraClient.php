@@ -24,7 +24,7 @@ class JiraClient
 
     public function createIssue($project, $subject, $body, $extraField = array(), $components = array())
     {
-        $soap = new \SoapClient ("http://" . $this->server . ":" . $this->port . $this->wsdl,
+        $soap = new \SoapClient ($this->server . ":" . $this->port . $this->wsdl,
             array ("style" => SOAP_RPC,"use" => SOAP_ENCODED,"soap_version" => SOAP_1_1,"uri" => "urn:myWS"));
 
         $auth = $soap->login ($this->user, $this->password);
